@@ -174,7 +174,7 @@ def delWatcher(path):
     pass
 
 
-def executeRawDatabaseCommand(command, callback, threadID):
+def executeRawDatabaseCommand(command, callback, threadID, dbInterfaceName):
     """
     功能说明：
         这个脚本函数在数据库上执行原始数据库命令，该命令将直接由相关数据库进行解析。
@@ -194,6 +194,7 @@ def executeRawDatabaseCommand(command, callback, threadID):
     @param threadID:int32,可选参数，指定一个线程来处理本条命令。
                           用户可以通过这个参数控制某一类命令的执行先后顺序（dbmgr是多线程处理的），
                           默认是不指定，如果threadID是实体的ID，那么将加入到该实体的存档队列中由线程逐条写入。
+    @:param dbInterfaceName:string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
     """
     pass
 
